@@ -15,7 +15,6 @@ candidate_votes = {}
 county_votes_dict = {}
 County_name_lis = []
 starting_county_count = 0
-to_print_results = True
 # Track the winning candidate, vote count, and percentage.
 winning_candidate = ""
 winning_count = 0
@@ -64,7 +63,8 @@ with open(file_to_save, "w") as txt_file:
         f"\nElection Results\n"
         f"-------------------------\n"
         f"Total Votes: {total_votes:,}\n"
-        f"-------------------------\n")
+        f"-------------------------\n"
+        f"Votes per county\n\n")
     print(election_results, end="")
 
     # per county results
@@ -72,18 +72,19 @@ with open(file_to_save, "w") as txt_file:
     for county_votes in county_votes_dict:
         #retrieve vote count per county
         county = county_votes_dict[county_votes]
-        vote_percentage_county = float(county) / float(total_votes) * 100
+        if county > 1 :
+
+            vote_percentage_county = float(county) / float(total_votes) * 100
 # print results per county 
-        county_results = (
-         f"{county_votes}: {vote_percentage_county:.1f}% ({county:,})\n")
+            county_results = (
+            f"{county_votes}: {vote_percentage_county:.1f}% ({county:,})\n")
       
-        print("county_results :",county_results)
+            print("county_results :",county_results)
 
 #write county results to txt file 
-        if to_print_results is True :
+        if county > 1 :
             txt_file.write(county_results)
-        else:
-            print("your stuck")
+        
     # Save the final vote count to the text file.
     txt_file.write(election_results)
     for candidate in candidate_votes:
