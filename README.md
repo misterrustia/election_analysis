@@ -26,5 +26,10 @@ The analysis of the election show that:
    - Raymon Anthony Doane recieved 3.1% of the vote and  (11,606) number of votes 
    - Diana DeGette recieved 73.8%  of the vote and  (272,892)  number of votes 
    -Charles Casper Stockham revieved 23.0% of the vote and (85,213) number of votes 
-A
-module 3 
+- The winner of the election was:
+  -Diana Degette, who recieved 73.8% of the vote and 272,892 votes. 
+  
+  Challenge overview 
+  -Extend  use of for loops and conditionals with membership and logical operators.
+-Scope and refactor code to provide additional information about voters per county. 
+- Write data about the number of votes that were cast from each county and create an output file and print the file.
